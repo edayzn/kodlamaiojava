@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Methods {
 	
-	public static void sayýbulmaca() {
+	public static void sayibulmaca() {
 		int[] sayilar = new int[] { 1, 2, 5, 7, 9, 0 };
 		System.out.print("Aranacak deðeri giriniz: ");
 		Scanner aranacakSayi = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class Methods {
 		}
 
 	}
-	
+	//overloading
 	public static int topla(int sayi1,int sayi2) {
 		return sayi1+sayi2;
 	}
