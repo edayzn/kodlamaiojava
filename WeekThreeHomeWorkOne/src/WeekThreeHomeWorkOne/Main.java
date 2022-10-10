@@ -1,6 +1,8 @@
 package WeekThreeHomeWorkOne;
 
 import WeekThreeHomeWorkOne.business.CustomerManager;
+import WeekThreeHomeWorkOne.business.MilitaryCraditManager;
+import WeekThreeHomeWorkOne.business.TeacherCreditManager;
 import WeekThreeHomeWorkOne.entities.Company;
 import WeekThreeHomeWorkOne.entities.Customer;
 import WeekThreeHomeWorkOne.entities.Person;
@@ -26,7 +28,7 @@ public class Main {
 		customer.setId(1);
 		customer.setCity("Ankara");
 
-		CustomerManager customerManager = new CustomerManager(customer);
+		//CustomerManager customerManager = new CustomerManager(customer);
 		//customerManager.save();
 
 		Person person = new Person();
@@ -40,7 +42,8 @@ public class Main {
 		company.setId(100);
 		
 		
-		CustomerManager customerManager2 = new CustomerManager(new Company());
+		CustomerManager customerManager2= new CustomerManager(new Customer(),new MilitaryCraditManager());
+		customerManager2.giveCredit();
 		
 
 	}
