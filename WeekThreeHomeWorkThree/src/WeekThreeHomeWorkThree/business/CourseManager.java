@@ -15,7 +15,7 @@ public class CourseManager {
 	public void add(Course course) throws Exception{
 		
 		Course course2= new Course(1,"Java","Engin Demiroð",2500);
-		if(course.getCourseName()== course2.getCourseName() || course.getPrice()<0) {
+		if(course.getCourseName().equals(course2.getCourseName())|| course.getPrice()<0) {
 			throw new Exception("Kayýtlý kurs ismi ve ya kurs ücreti geçersiz!");
 		}
 		baseDao.add(course);

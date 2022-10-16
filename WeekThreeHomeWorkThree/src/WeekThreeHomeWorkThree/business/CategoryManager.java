@@ -16,7 +16,8 @@ public class CategoryManager {
 	
 	public void add(Category category) throws Exception{
 		Category category2=new Category(1,"Backend");
-		if(category.getCategoryName()==category2.getCategoryName()) {
+		category.getCategoryName().equals(category2.getCategoryName());
+		if(category.getCategoryName().equals(category2.getCategoryName())) {
 			throw new Exception("Bu isimde kategori var!.");
 		}
 		

@@ -18,7 +18,7 @@ public class Main {
 		CategoryManager categoryManager=new CategoryManager(new JdbcDao<Category>(),logger);
 		categoryManager.add(category);
 		
-		Course course= new Course(2,".Net","Engin Demiroğ",250);
+		Course course= new Course(2,".Net","Engin Demiroğ",-250);
 		CourseManager courseManager=new CourseManager(new HibernateDao<Course>(), logger);
 		courseManager.add(course);
 		
