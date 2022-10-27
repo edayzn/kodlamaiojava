@@ -2,6 +2,7 @@ package WeekThreeHomeWorkThree;
 
 import WeekThreeHomeWorkThree.business.CategoryManager;
 import WeekThreeHomeWorkThree.business.CourseManager;
+import WeekThreeHomeWorkThree.core.logging.DatabaseLogger;
 import WeekThreeHomeWorkThree.core.logging.Logger;
 import WeekThreeHomeWorkThree.core.logging.MailLogger;
 import WeekThreeHomeWorkThree.dataAccess.HibernateDao;
@@ -13,7 +14,7 @@ public class Main {
 
 	public static void main(String[] args) throws Exception {
 		
-		Logger[] logger= {new MailLogger()};
+		Logger[] logger= {new MailLogger(),new DatabaseLogger()};
 		Category category=new Category(1,"Frontend");
 		CategoryManager categoryManager=new CategoryManager(new JdbcDao<Category>(),logger);
 		categoryManager.add(category);
