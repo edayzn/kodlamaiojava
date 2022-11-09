@@ -2,7 +2,6 @@ package kodlama.io.homework.WeekFourHomeWorkOne.webApi.controllers;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,18 +24,18 @@ public class LanguagesController {
 		this.languageService = languageService;
 	}
 
-	@PostMapping("/addlanguage")
+	@PostMapping("/add")
 	public void add(Language language) throws Exception {
 		languageService.add(language);
 
 	}
 
-	@PutMapping("/updatelanguage")
-	public void update(Language language) throws Exception {
-		languageService.update(language);
+	@PutMapping("/update")
+	public void update(int id,String name) throws Exception {
+		languageService.update(id,name);
 	}
 
-	@DeleteMapping("/deletelanguage")
+	@DeleteMapping("/delete")
 	public void delete(Language language) throws Exception {
 		languageService.delete(language);
 	}

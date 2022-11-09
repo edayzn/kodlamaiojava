@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import kodlama.io.homework.WeekFourHomeWorkOne.business.abstracts.LanguageService;
 import kodlama.io.homework.WeekFourHomeWorkOne.dataAccess.abstracts.LanguageRepository;
 import kodlama.io.homework.WeekFourHomeWorkOne.entities.concretes.Language;
+
 @Service
 public class LanguageManager implements LanguageService {
 	private LanguageRepository languageRepository;
 
-	
 	@Autowired
 	public LanguageManager(LanguageRepository languageRepository) {
 		super();
@@ -21,16 +21,11 @@ public class LanguageManager implements LanguageService {
 
 	@Override
 	public void add(Language language) throws Exception {
-		languageRepository.add(language);
+		languageRepository.save(language);
 	}
 
 	@Override
-	public void update(Language language) throws Exception {
-		languageRepository.update(language);
-	}
-
-	@Override
-	public void delete(Language language) throws Exception{
+	public void delete(Language language) throws Exception {
 		languageRepository.delete(language);
 
 	}
@@ -38,6 +33,13 @@ public class LanguageManager implements LanguageService {
 	@Override
 	public List<Language> getAll() {
 		// TODO Auto-generated method stub
-		return languageRepository.getAll();
+		return languageRepository.findAll();
 	}
+
+	@Override
+	public void update(int id, String languageName) throws Exception {
+		//languageRepository.update(id, languageName);
+
+	}
+
 }
